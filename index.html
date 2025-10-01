@@ -1,4 +1,42 @@
-<!DOCTYPE html>&#10;<html lang="ja">&#10;<head>&#10;&#32;&#32;<meta charset="UTF-8">&#10;&#32;&#32;<title>&#85;&#45;&#78;&#69;&#88;&#84;&#26908;&#32034;&#12522;&#12480;&#12452;&#12524;&#12463;&#12488;</title>&#10;</head>&#10;<body>&#10;&#32;&#32;<h1>&#85;&#45;&#78;&#69;&#88;&#84;&#32;&#26908;&#32034;</h1>&#10;&#32;&#32;<form id="searchForm">&#10;&#32;&#32;&#32;&#32;<input type="text" id="queryInput" placeholder="作品名.人名で検索" required>&#10;&#32;&#32;&#32;&#32;<button type="submit">&#26908;&#32034;&#12377;&#12427;</button>&#10;&#32;&#32;</form>&#10;&#10;&#32;&#32;<script>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>U-NEXT検索リダイレクト</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body { font-family: Arial, "メイリオ", sans-serif; background: #fafafa; color: #333; }
+    .container { max-width: 480px; margin: 60px auto 0; padding: 2em 2em 1em 2em; background: #fff; border-radius: 12px; box-shadow: 0 4px 24px #ccc; }
+    h1 { font-size: 1.5em; margin-bottom: 0.5em; }
+    form { display: flex; gap: 0.5em; margin-bottom: 1em; }
+    input[type="text"] { flex: 1; padding: 0.5em; font-size: 1em; border-radius: 6px; border: 1px solid #ccc; }
+    button { padding: 0.5em 1em; font-size: 1em; border-radius: 6px; border: none; background: #338af3; color: #fff; cursor: pointer; }
+    button:hover { background: #2271c7; }
+    .notice {
+      background: #ffeccf;
+      color: #7a4f13;
+      padding: 0.8em 1em;
+      border-radius: 8px;
+      margin-bottom: 1.2em;
+      font-size: 0.97em;
+      border: 1px solid #ffd580;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>U-NEXT検索リダイレクト</h1>
+    <div class="notice">
+      ※ご注意：本ページはU-NEXT公式サイトではありません。<br>
+      検索結果に表示されるコンテンツには有料の場合があります。<br>
+      また、本ページから直接コンテンツの視聴はできません。
+    </div>
+    <form id="searchForm">
+      <input type="text" id="queryInput" placeholder="作品名やキーワード">
+      <button type="submit">U-NEXTで検索</button>
+    </form>
+  </div>
+  <script>
     document.getElementById('searchForm').addEventListener('submit', function(e) {
       e.preventDefault(); 
       const query = encodeURIComponent(document.getElementById('queryInput').value.trim());
@@ -7,4 +45,6 @@
         window.location.href = url; 
       }
     });
-  </script>&#10;</body>&#10;</html>&#10;
+  </script>
+</body>
+</html>
