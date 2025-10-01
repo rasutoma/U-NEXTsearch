@@ -1,0 +1,10 @@
+<!DOCTYPE html>&#10;<html lang="ja">&#10;<head>&#10;&#32;&#32;<meta charset="UTF-8">&#10;&#32;&#32;<title>&#85;&#45;&#78;&#69;&#88;&#84;&#26908;&#32034;&#12522;&#12480;&#12452;&#12524;&#12463;&#12488;</title>&#10;</head>&#10;<body>&#10;&#32;&#32;<h1>&#85;&#45;&#78;&#69;&#88;&#84;&#32;&#26908;&#32034;</h1>&#10;&#32;&#32;<form id="searchForm">&#10;&#32;&#32;&#32;&#32;<input type="text" id="queryInput" placeholder="検索キーワードを入力" required>&#10;&#32;&#32;&#32;&#32;<button type="submit">&#26908;&#32034;&#12377;&#12427;</button>&#10;&#32;&#32;</form>&#10;&#10;&#32;&#32;<script>
+    document.getElementById('searchForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // ページのリロード防止
+      const query = encodeURIComponent(document.getElementById('queryInput').value.trim());
+      if (query) {
+        const url = `https://video.unext.jp/freeword?query=${query}`;
+        window.location.href = url; 
+      }
+    });
+  </script>&#10;</body>&#10;</html>&#10;
